@@ -1,0 +1,34 @@
+<div class="container mt-2">
+    <div class="card col-md-6 offset-md-3 mt-5">
+        <div class="card-header">
+            Ajouter un conducteur
+        </div>
+
+        <div class="card-body">
+            <form [formGroup]="saveConducteurFormGroup" (ngSubmit)="handleSaveConducteur()">
+
+                    <div class="mb-2">
+                       <label class="input-group-text"> nom : </label>
+                       <input type="text" formControlName="nom" class="form-control">
+                      <span *ngIf="saveConducteurFormGroup.controls['nom'].touched && saveConducteurFormGroup.controls['nom'].errors && saveConducteurFormGroup.controls['nom'].errors!['required']" class="text-danger">
+                   Name is required
+                        </span>
+                    </div>
+                    <div class="mb-2">
+                        <label class="input-group-text"> prenom : </label>
+                        <input type="text" formControlName="prenom" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                        <label class="input-group-text"> cin : </label>
+                        <input type="text" formControlName="cin" class="form-control">
+                    </div>
+                    <div class="mb-2 d-flex justify-content-center">
+                    <button [disabled]="!saveConducteurFormGroup.valid" class="btn btn-success " > Save </button>
+                        </div>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>

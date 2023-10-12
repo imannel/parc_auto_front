@@ -1,0 +1,30 @@
+<div class ="container mt-2">
+  <div class="card">
+    <div class="card-header"> Voyages</div>
+    <div class="card-body">
+<table class="table">
+  <thead>
+  <tr>
+    <th>id:</th>
+    <th>date debut</th>
+    <th>date fin</th>
+    <th>ville de départ</th>
+    <th>ville d'arrivé</th>
+    <th>type de véhicule</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let v of voyages|async">
+    <td>{{v.id}}</td>
+    <td>{{v.date_Debut|date:'dd-MM-yyyy'}}</td>
+    <td>{{v.date_Fin|date:'dd-MM-yyyy'}}</td>
+    <td>{{v.vilDep}}</td>
+    <td>{{v.vilAr}}</td>
+    <td>{{v.typeVehicule}}</td>
+  </tr>
+
+  </tbody>
+</table>
+    </div>
+  </div>
+</div>

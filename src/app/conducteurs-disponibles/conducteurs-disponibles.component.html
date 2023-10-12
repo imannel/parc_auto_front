@@ -1,0 +1,32 @@
+
+<div class ="container mt-2">
+    <div class="card">
+        <div class="card-header">selectionner un conducteur</div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>CIN</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let c of conducteursDisponibles|async"
+                    [class.table-primary]="selectedConducteur=== c"
+                    (click)="selectConducteur(c)">
+
+                    <td>{{c.id}}</td>
+                    <td>{{c.cin}}</td>
+                    <td>{{c.nom}}</td>
+                    <td>{{c.prenom}}</td>
+
+                </tr>
+                </tbody>
+            </table>
+            <button (click)="validateSelection()" [disabled]="!selectedVoyage" class="btn btn-info">Valider</button>
+
+        </div>
+    </div>
+</div>

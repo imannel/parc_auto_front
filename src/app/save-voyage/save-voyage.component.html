@@ -1,0 +1,36 @@
+<div class="container mt-2">
+  <div class="card col-md-6  mt-2">
+  <div class="card ">
+    <div class="card-header ">
+      <div>Planifier un voyage</div>
+    </div>
+    <div class ="card-body">
+      <form [formGroup]="saveVoyageFormGroup" (ngSubmit)="handleSaveVoyage()">
+      <div class="mb-2">
+        <label class="input-group-text">  date debut: </label>
+        <input type="datetime-local" formControlName="date_Debut" class="form-control">
+      </div>
+      <div class="mb-2">
+        <label class="input-group-text"> date fin : </label>
+        <input type="datetime-local" formControlName="date_Fin" class="form-control">
+      </div>
+      <div class="mb-2">
+        <label class="input-group-text"> ville départ: </label>
+        <input type="text" formControlName="vilDep" class="form-control">
+      </div>
+      <div class="mb-2">
+        <label class="input-group-text"> ville d'arrivé: </label>
+        <input type="text" formControlName="vilAr" class="form-control">
+      </div>
+      <div class="mb-2">
+        <label class="input-group-text"> type de véhicule: </label>
+        <input type="text" formControlName="typeVehicule" class="form-control">
+      </div>
+      <div class="mb-2 d-flex justify-content-center">
+        <button [disabled]="!saveVoyageFormGroup.valid" class="btn btn-success " > Save </button>
+      </div>
+      </form>
+    </div>
+  </div>
+     </div>
+  </div>
